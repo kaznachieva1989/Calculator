@@ -76,31 +76,22 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.equals:
                         if (isOpPressed) {
+                            String screenContent = calculatorScreen.getText().toString();
+                            String secondNumberString = screenContent.substring(secondNumberIndex, screenContent.length());
+                            double secondNumber = Double.parseDouble(secondNumberString);
                             if (currentOp == '+') {
-                                String screenContent = calculatorScreen.getText().toString();
-                                String secondNumberString = screenContent.substring(secondNumberIndex, screenContent.length());
-                                double secondNumber = Double.parseDouble(secondNumberString);
                                 secondNumber += firstNumber;
                                 calculatorScreen.setText(String.valueOf(secondNumber));
                             }
                             if (currentOp == '-') {
-                                String screenContent = calculatorScreen.getText().toString();
-                                String secondNumberString = screenContent.substring(secondNumberIndex, screenContent.length());
-                                double secondNumber = Double.parseDouble(secondNumberString);
                                 firstNumber -= secondNumber;
-                                calculatorScreen.setText(String.valueOf(secondNumber));
+                                calculatorScreen.setText(String.valueOf(firstNumber));
                             }
                             if (currentOp == '*') {
-                                String screenContent = calculatorScreen.getText().toString();
-                                String secondNumberString = screenContent.substring(secondNumberIndex, screenContent.length());
-                                double secondNumber = Double.parseDouble(secondNumberString);
                                 secondNumber *= firstNumber;
                                 calculatorScreen.setText(String.valueOf(secondNumber));
                             }
                             if (currentOp == '/') {
-                                String screenContent = calculatorScreen.getText().toString();
-                                String secondNumberString = screenContent.substring(secondNumberIndex, screenContent.length());
-                                double secondNumber = Double.parseDouble(secondNumberString);
                                 firstNumber /= secondNumber;
                                 calculatorScreen.setText(String.valueOf(firstNumber));
                             }
